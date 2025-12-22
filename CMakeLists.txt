@@ -15,5 +15,5 @@ FetchContent_Declare(
   GIT_TAG jrl-next
 )
 FetchContent_MakeAvailable(jrl-cmakemodules)
-
+find_package(Python 3.8 REQUIRED COMPONENTS Interpreter Development.Module NumPy)
 jrl_find_python(3.8 COMPONENTS Interpreter Development.Module NumPy)
