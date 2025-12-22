@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.22)
 project(py)
 
+find_package(Python 3.8 REQUIRED COMPONENTS Interpreter Development.Module NumPy)
+
 set(
   JRL_CMAKEMODULES_USE_V2
   ON
@@ -15,5 +17,5 @@ FetchContent_Declare(
   GIT_TAG jrl-next
 )
 FetchContent_MakeAvailable(jrl-cmakemodules)
-find_package(Python 3.8 REQUIRED COMPONENTS Interpreter Development.Module NumPy)
+
 jrl_find_python(3.8 COMPONENTS Interpreter Development.Module NumPy)
