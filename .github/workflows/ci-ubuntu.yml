@@ -20,4 +20,4 @@ jobs:
           packages: cmake ninja-build ccache libboost-all-dev libeigen3-dev python3-numpy python3-dev python3-scipy
           version: 1.0
       - uses: actions/checkout@v6
-      - run: cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING_SCIPY=ON
+      - run: /usr/bin/cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING_SCIPY=ON
