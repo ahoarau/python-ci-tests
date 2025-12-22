@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.22)
 project(py)
 
+set(
+  JRL_CMAKEMODULES_USE_V2
+  ON
+  CACHE BOOL
+  "Use jrl-cmakemodules v2 on https://github.com/jrl-umi3218/jrl-cmakemodules"
+)
+
 include(FetchContent)
 FetchContent_Declare(
   jrl-cmakemodules
