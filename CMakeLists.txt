@@ -1,15 +1,12 @@
 cmake_minimum_required(VERSION 3.22)
 project(py)
 
-find_package(Python 3.8 COMPONENTS Interpreter Development.Module NumPy)
+include(FetchContent)
+FetchContent_Declare(
+  jrl-cmakemodules
+  GIT_REPOSITORY https://github.com/ahoarau/jrl-cmakemodules
+  GIT_TAG jrl-next
+)
+FetchContent_MakeAvailable(jrl-cmakemodules)
 
-message(STATUS "   Python_FOUND             : ${Python_FOUND}")
-message(STATUS "   Python_EXECUTABLE        : ${Python_EXECUTABLE}")
-message(STATUS "   Python_VERSION           : ${Python_VERSION}")
-message(STATUS "   Python_SITELIB           : ${Python_SITELIB}")
-message(STATUS "   Python_INCLUDE_DIRS      : ${Python_INCLUDE_DIRS}")
-message(STATUS "   Python_LIBRARIES         : ${Python_LIBRARIES}")
-message(STATUS "   Python_SOABI             : ${Python_SOABI}")
-message(STATUS "   Python_NumPy_FOUND       : ${Python_NumPy_FOUND}")
-message(STATUS "   Python_NumPy_VERSION     : ${Python_NumPy_VERSION}")
-message(STATUS "   Python_NumPy_INCLUDE_DIRS: ${Python_NumPy_INCLUDE_DIRS}")
+jrl_find_python(3.8 COMPONENTS Interpreter Development.Module NumPy)
