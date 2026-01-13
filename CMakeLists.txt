@@ -10,8 +10,7 @@ set(
 include(FetchContent)
 FetchContent_Declare(
   jrl-cmakemodules
-  GIT_REPOSITORY https://github.com/ahoarau/jrl-cmakemodules
-  GIT_TAG jrl-next
+  URL https://github.com/ahoarau/jrl-cmakemodules/archive/refs/heads/jrl-next.zip
 )
 FetchContent_MakeAvailable(jrl-cmakemodules)
 
