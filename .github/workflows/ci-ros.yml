@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #ROS_DISTRO: [humble, jazzy, kilted, rolling]
+        ROS_DISTRO: [humble, jazzy, kilted, rolling]
         PRERELEASE: [true, false]
         include:
           # ROS2 Humble Hawksbill (May 2022 - May 2027)
