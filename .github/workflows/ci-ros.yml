@@ -3,12 +3,12 @@ on: push
 
 jobs:
   ros:
-    name: ROS ${{ matrix.ROS_DISTRO }} - ${{ matrix.os }}
+    name: "ROS ${{ matrix.ROS_DISTRO }} - Prerelease: ${{ matrix.PRERELEASE }}"
     strategy:
       fail-fast: false
       matrix:
         ROS_DISTRO: [humble, jazzy, kilted, rolling]
-        PRERELEASE: [ON, OFF]
+        PRERELEASE: [true, false]
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
     runs-on: ubuntu-latest
